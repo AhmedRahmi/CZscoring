@@ -88,11 +88,11 @@
 					title: "cirno gaming",
 					soundtracks: [
 						{
-							url: "/static/sounds/cirnos-perfect-math-class.mp3",
+							url: "/static/soundtracks/cirnos-perfect-math-class.mp3",
 							title: "cirno gaming soundtrack"
 						}
 					]
-				},
+				}
 			];
 			
 			function loadFunnyPicture(force){
@@ -167,11 +167,15 @@
 				}
 
 				if(picData.soundtracks && picData.soundtracks.length > 0){
-					const randomTrack = picData.soundtracks[Math.floor(Math.random()*picData.soundtracks.length)];
+					const randomTrackIndex = Math.floor(Math.random()*picData.soundtracks.length);
 
-					funnySoundtrack.src = picData.soundtracks[randomTrack].url;
+					funnySoundtrack.src = picData.soundtracks[randomTrackIndex].url;
 					funnySoundtrack.load();
-					funnySoundtrack.play();
+					
+					document.addEventListener("click", e => { 
+						funnySoundtrack.play();
+					});
+
 				} else {
 					funnySoundtrack.pause();
 					funnySoundtrack.removeAttribute("src");
