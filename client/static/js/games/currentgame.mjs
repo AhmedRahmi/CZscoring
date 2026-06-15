@@ -1,5 +1,5 @@
 // specify which game you're using here.
 
-import { radrush } from "/static/js/games/radrush.mjs";
+import { bankbash } from "/static/js/games/bankbash.mjs";
 
-export const CURRENT_GAME = radrush;
+export const CURRENT_GAME = bankbash;

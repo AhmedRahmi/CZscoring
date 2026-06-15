@@ -11,6 +11,7 @@
 			<a href="/settings">Settings</a>
 			<p id="funny-picture-status"></p>
 			<img id="funny-picture" class="center"/>
+			<audio id="funny-soundtrack" style="display: none"></audio>
 		</div>
 		
 		<p id="status">Checking if login is required...</p>
@@ -81,11 +82,22 @@
 				{
 					url: "/static/images/peepsonhisthrone.png",
 					title: "pee piss"
-				}
+				},
+				{
+					url: "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZjBkMHl5Nm1mejM2Ym80czBjeXJpMHk0dWdhaG8wcjJ5c3J6MnNwbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8xe3aelc1IIpuzf03N/giphy.gif",
+					title: "cirno gaming",
+					soundtracks: [
+						{
+							url: "/static/sounds/cirnos-perfect-math-class.mp3",
+							title: "cirno gaming soundtrack"
+						}
+					]
+				},
 			];
 			
 			function loadFunnyPicture(force){
 				const funnyPicture = document.getElementById("funny-picture");
+				const funnySoundtrack = document.getElementById("funny-soundtrack");
 				const funnyPictureStatus = document.getElementById("funny-picture-status");
 				
 				// randomize funny picture
@@ -152,6 +164,17 @@
 					funnyPicture.height = picData.height;
 				} else {
 					funnyPicture.removeAttribute("height");
+				}
+
+				if(picData.soundtracks && picData.soundtracks.length > 0){
+					const randomTrack = picData.soundtracks[Math.floor(Math.random()*picData.soundtracks.length)];
+
+					funnySoundtrack.src = picData.soundtracks[randomTrack].url;
+					funnySoundtrack.load();
+					funnySoundtrack.play();
+				} else {
+					funnySoundtrack.pause();
+					funnySoundtrack.removeAttribute("src");
 				}
 			}
 		</script>
