@@ -13,38 +13,26 @@ export const bankbash = new ScoresheetTemplate()
 		.addObjective({
 			name: "Was TGI Placed?",
 			type: "dropdown",
-			value: [0, 5, 15],
-			options: ["Didn't Place", "Placed in Opposing Key Area", "Placed in Bagging"]
+			value: [0, 6],
+			options: ["Didn't Place", "Placed in Bagging"]
 		})
 	.createSection("TeleOp") // teleop
 		.addObjective({
-			name: "Coins bagged",
-			value: 2
+			name: "Silver Coins bagged",
+			value: 3
 		})
 		.addObjective({
-			name: "Gold Bars Scored (Base)",
+			name: "Gold Coins bagged",
 			value: 4
 		})
 		.addObjective({
-			name: "Gold Bars Scored (Vault)",
+			name: "Gold Bars bagged",
 			value: 8
 		})
 	.createSection("End Game") // end game
 		.addObjective({
-			name: "Gold Blocks Scored (Base)",
-			value: 4
-		})
-		.addObjective({
-			name: "Gold Blocks Scored (Vault)",
-			value: 8
-		})
-		.addObjective({
-			name: "Gold Bars Scored (Shelf)",
-			value: 12
-		})
-		.addObjective({
-			name: "Gold Blocks Scored (Shelf)",
-			value: 12
+			name: "Gold Blocks bagged",
+			value: 16
 		})
 		.addObjective({
 			name: "Any Parking (Base Zone)?",
