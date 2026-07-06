@@ -7,38 +7,38 @@ export const bankbash = new ScoresheetTemplate()
 		.addObjective({
 			name: "Left Starting Area?",
 			type: "dropdown",
-			value: [0, 5],
+			value: [0, 2],
 			options: ["Didn't Leave", "Left"]
 		})
 		.addObjective({
 			name: "Was TGI Placed?",
 			type: "dropdown",
-			value: [0, 6],
+			value: [0, 10],
 			options: ["Didn't Place", "Placed in Bagging"]
 		})
 	.createSection("TeleOp") // teleop
 		.addObjective({
 			name: "Silver Coins bagged",
-			value: 3
-		})
-		.addObjective({
-			name: "Gold Coins bagged",
 			value: 4
 		})
 		.addObjective({
-			name: "Gold Bars bagged",
+			name: "Gold Coins bagged",
 			value: 8
+		})
+		.addObjective({
+			name: "Gold Bars bagged",
+			value: 12
 		})
 	.createSection("End Game") // end game
 		.addObjective({
 			name: "Gold Blocks bagged",
-			value: 16
+			value: 30
 		})
 		.addObjective({
 			name: "Any Parking (Base Zone)?",
 			type: "dropdown",
-			value: [0, 5, 10],
-			options: ["Didn't Park", "Somewhat Parked", "Parked"]
+			value: [0, 2, 5],
+			options: ["Didn't Park", "Partially Parked", "Fully Parked"]
 		})
 	.createSection("Penalties (You must talk with your fellow scorer for these)")
 		.addObjective({
