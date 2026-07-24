@@ -16,6 +16,18 @@ export const bankbash = new ScoresheetTemplate()
 			value: [0, 10],
 			options: ["Didn't Place", "Placed in Bagging"]
 		})
+		.addObjective({
+			name: "Silver Coins in bagging",
+			value: 6
+		})
+		.addObjective({
+			name: "Gold Coins in bagging",
+			value: 10
+		})
+		.addObjective({
+			name: "Gold Bars in bagging (LMAO TELL ME WHEN THAT HAPPENS)",
+			value: 16
+		})
 	.createSection("TeleOp") // teleop
 		.addObjective({
 			name: "Silver Coins bagged",
